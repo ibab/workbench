@@ -17,7 +17,14 @@ You can install it with
 go get github.com/ibab/workbench
 ```
 
-In order to see list all currently running instances, run
+Before using `workbench`, make sure that you have stored your AWS credentials in `~/.aws/credentials`:
+```
+[default]
+aws_access_key_id = MYAWSACCESSKEY
+aws_secret_access_key = MYAWSSECRETKEY
+```
+
+In order to list all currently running instances, execute
 ```bash
 $ workbench status
 ## running: 0
@@ -29,5 +36,17 @@ To see all available personal AWS images, run
 $ workbench images
 ## images: 1
 [1] ubuntu-15.10-cuda-dev
+```
+
+In order to open a new tmux session or attach to an existing one, run
+```bash
+$ workbench attach 1
+```
+
+## Commands that still need to be implemented:
+```
+$ workbench launch
+$ workbench snap
+$ workbench terminate
 ```
 
