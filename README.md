@@ -43,10 +43,25 @@ In order to open a new tmux session or attach to an existing one, run
 $ workbench attach 1
 ```
 
+In order to launch a new instance (currently only spot requests are performed), run
+```bash
+$ workbench launch 1
+```
+with the index of the image you want to base the instance on.
+`workbench` will then ask you for the instance type you want to use and allow you to set
+the availability zone and spot price.
+The spot request is currently limited to an arbitary 10h.
+
+If you want to terminate an instance, run
+```bash
+$ workbench terminate 1
+```
+with the index of the instance you want to terminate.
+This will also cancel the spot request.
+
 ## Commands that still need to be implemented:
 ```
-$ workbench launch
 $ workbench snap
-$ workbench terminate
+$ workbench rmi
 ```
 

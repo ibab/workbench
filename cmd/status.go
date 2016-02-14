@@ -13,17 +13,25 @@ var statusCmd = &cobra.Command{
 	Run: func(cmd *cobra.Command, args []string) {
 
 		green := color.New(color.FgGreen).SprintFunc()
+		yellow := color.New(color.FgYellow).SprintFunc()
 
 		instances := GetInstances()
 
-		fmt.Printf("## %s: %d\n", green("running"), len(instances))
+		fmt.Printf("## instances: %d\n", len(instances))
 
 		if len(instances) == 0 {
 			fmt.Println("No instances are currently running")
 		}
 
 		for i, inst := range instances {
-			fmt.Printf("[%d] %s\n", i+1, *inst.PublicDnsName)
+			marker := "?"
+			if *inst.State.Name == "running" {
+				marker = green("R")
+			} else if *inst.State.Name == "pending" {
+				marker = yellow("P")
+			}
+
+			fmt.Printf("[%d] %s %s\n", i+1, marker, *inst.PublicDnsName)
 		}
 	},
 }
