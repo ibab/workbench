@@ -10,7 +10,7 @@ end of the day, I create a snapshot of my running instance and terminate it.
 The snapshot is usually the basis for the instance I launch the next day.
 
 I wrote `workbench` to streamline this workflow, so that it can be performed
-in seconds and without recurse to the AWS web interface.
+in seconds and without recourse to the AWS web interface.
 
 You can install it with
 ```bash
