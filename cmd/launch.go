@@ -2,10 +2,10 @@ package cmd
 
 import (
 	"fmt"
-	"os"
-	"strconv"
 	"github.com/spf13/cobra"
 	"github.com/tcnksm/go-input"
+	"os"
+	"strconv"
 )
 
 var launchCmd = &cobra.Command{
@@ -37,9 +37,9 @@ var launchCmd = &cobra.Command{
 
 		query := "Which instance type should be launched?"
 		instanceType, err := ui.Ask(query, &input.Options{
-			Default: "c3.4xlarge",
+			Default:  "c3.4xlarge",
 			Required: true,
-			Loop: true,
+			Loop:     true,
 		})
 		if err != nil {
 			panic(err)
@@ -53,18 +53,18 @@ var launchCmd = &cobra.Command{
 		}
 
 		zone, err := ui.Ask("Which availability zone should be chosen?", &input.Options{
-			Default: "us-east-1d",
+			Default:  "us-east-1d",
 			Required: true,
-			Loop: true,
+			Loop:     true,
 		})
 		if err != nil {
 			panic(err)
 		}
 
 		price, err := ui.Ask("Which price should be chosen?", &input.Options{
-			Default: "0.0",
+			Default:  "0.0",
 			Required: true,
-			Loop: true,
+			Loop:     true,
 		})
 		if err != nil {
 			panic(err)
@@ -73,7 +73,7 @@ var launchCmd = &cobra.Command{
 		LaunchSpotInstance(
 			price,
 			zone,
-			*images[num - 1].ImageId,
+			*images[num-1].ImageId,
 			instanceType,
 		)
 

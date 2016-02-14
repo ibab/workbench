@@ -29,8 +29,8 @@ var terminateCmd = &cobra.Command{
 			os.Exit(1)
 		}
 
-		TerminateInstance(instances[num - 1])
-		fmt.Printf("Instance %s terminated.\n", *instances[num - 1].PublicDnsName)
+		TerminateInstance(instances[num-1])
+		fmt.Printf("Instance %s terminated.\n", *instances[num-1].PublicDnsName)
 
 	},
 }
