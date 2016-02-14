@@ -27,7 +27,7 @@ aws_secret_access_key = MYAWSSECRETKEY
 In order to list all currently running instances, execute
 ```bash
 $ workbench status
-## running: 0
+## instances: 0
 No instances are currently running
 ```
 
