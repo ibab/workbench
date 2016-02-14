@@ -2,8 +2,8 @@ package cmd
 
 import (
 	"fmt"
-	"github.com/spf13/cobra"
 	"github.com/fatih/color"
+	"github.com/spf13/cobra"
 )
 
 // imagesCmd represents the images command
@@ -15,8 +15,8 @@ var imagesCmd = &cobra.Command{
 
 		images := GetImages()
 		fmt.Printf("## %s: %d\n", green("images"), len(images))
-		for i, image :=  range images {
-			fmt.Printf("[%d] %s\n", i + 1, *image.Name)
+		for i, image := range images {
+			fmt.Printf("[%d] %s\n", i+1, *image.Name)
 		}
 	},
 }

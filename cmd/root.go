@@ -6,7 +6,6 @@ import (
 
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
-
 )
 
 var cfgFile string
@@ -51,8 +50,8 @@ func initConfig() {
 	}
 
 	viper.SetConfigName(".workbench") // name of config file (without extension)
-	viper.AddConfigPath("$HOME")  // adding home directory as first search path
-	viper.AutomaticEnv()          // read in environment variables that match
+	viper.AddConfigPath("$HOME")      // adding home directory as first search path
+	viper.AutomaticEnv()              // read in environment variables that match
 
 	// If a config file is found, read it in.
 	if err := viper.ReadInConfig(); err == nil {

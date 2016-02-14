@@ -2,10 +2,10 @@ package cmd
 
 import (
 	"fmt"
-	"os"
-	"strconv"
-	"os/exec"
 	"github.com/spf13/cobra"
+	"os"
+	"os/exec"
+	"strconv"
 )
 
 // attachCmd represents the attach command
@@ -39,12 +39,8 @@ var attachCmd = &cobra.Command{
 				os.Exit(1)
 			}
 
-			inst := instances[selected_number - 1]
-			launchTmux := "'tmux has-session -t work > /dev/null 2>&1; " + 
-			                  "if [ $? -eq 0 ];" + 
-												"  then tmux attach-session -t work;" + 
-												"  else tmux new-session -s work;" + 
-												"fi'"
+			inst := instances[selected_number-1]
+			launchTmux := "'tmux has-session -t work > /dev/null 2>&1; if [ $? -eq 0 ]; then tmux attach-session -t work; else tmux new-session -s work; fi'"
 			cmd := exec.Command("ssh", "-t", *inst.PublicDnsName, "bash", "-c", launchTmux)
 			cmd.Stdin = os.Stdin
 			cmd.Stdout = os.Stdout

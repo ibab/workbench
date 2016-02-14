@@ -3,8 +3,8 @@ package cmd
 import (
 	"fmt"
 
-	"github.com/spf13/cobra"
 	"github.com/fatih/color"
+	"github.com/spf13/cobra"
 )
 
 var statusCmd = &cobra.Command{
@@ -23,7 +23,7 @@ var statusCmd = &cobra.Command{
 		}
 
 		for i, inst := range instances {
-			fmt.Printf("[%d] %s\n", i + 1, *inst.PublicDnsName)
+			fmt.Printf("[%d] %s\n", i+1, *inst.PublicDnsName)
 		}
 	},
 }
