@@ -42,6 +42,7 @@ In order to open a new tmux session or attach to an existing one, run
 ```bash
 $ workbench attach 1
 ```
+with the index of the instance you want to attach to.
 
 In order to launch a new instance (currently only spot requests are performed), run
 ```bash
